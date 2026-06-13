@@ -1,0 +1,108 @@
+:root {
+  font-family: system-ui, -apple-system, sans-serif;
+  color: #1a1a1a;
+}
+
+body {
+  margin: 0;
+  background: #f4f4f5;
+}
+
+.app {
+  max-width: 640px;
+  margin: 0 auto;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  padding: 12px;
+  box-sizing: border-box;
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 8px;
+}
+
+.header h1 {
+  font-size: 1.25rem;
+  margin: 0;
+}
+
+.messages {
+  flex: 1;
+  overflow-y: auto;
+  background: #fff;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 12px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.msg {
+  padding: 8px 12px;
+  border-radius: 8px;
+  max-width: 85%;
+  white-space: pre-wrap;
+  line-height: 1.4;
+}
+
+.msg.user {
+  align-self: flex-end;
+  background: #2563eb;
+  color: #fff;
+}
+
+.msg.assistant {
+  align-self: flex-start;
+  background: #e5e7eb;
+}
+
+.msg.error {
+  align-self: flex-start;
+  background: #fee2e2;
+  color: #991b1b;
+}
+
+.empty {
+  color: #888;
+  margin: auto;
+}
+
+.composer {
+  display: flex;
+  gap: 8px;
+  margin-top: 8px;
+}
+
+.composer input {
+  flex: 1;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  font-size: 1rem;
+}
+
+button {
+  padding: 10px 16px;
+  border: none;
+  border-radius: 8px;
+  background: #2563eb;
+  color: #fff;
+  font-size: 1rem;
+  cursor: pointer;
+}
+
+button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.new-chat {
+  background: #6b7280;
+  padding: 6px 10px;
+  font-size: 0.85rem;
+}
