@@ -67,6 +67,20 @@ The mocked suite intercepts `/api/chat` with `page.route()` and covers: page loa
 sending messages, loading state, weather replies, search replies, `thread_id`
 creation/persistence/reuse, "New chat" reset, and backend-error handling.
 
+## Tracing (LangSmith)
+
+Agent runs are traced to [LangSmith](https://smith.langchain.com) automatically when
+these are set in `server/.env` — no code changes needed (LangChain reads them on each run):
+
+```
+LANGSMITH_TRACING=true
+LANGSMITH_API_KEY=<your key>
+LANGSMITH_PROJECT=travel-agent     # project name to log under (optional)
+```
+
+Each chat request produces a full trace tree (agent → LLM calls → tool calls) under the
+`travel-agent` project. View them at https://smith.langchain.com.
+
 ## Notes
 
 - The Gemini model is set in `server/agent.js` (`model: "gemini-3.1-flash-lite"`).
